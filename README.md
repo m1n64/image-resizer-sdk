@@ -19,7 +19,7 @@ It provides a simple, typed API for uploading and retrieving images via the REST
 ## ⚙️ Installation
 
 ```bash
-composer require m1n64/image-resizer-sdk
+composer require m1n64/imageresizer-sdk
 ```
 
 ---
