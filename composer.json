@@ -1,0 +1,32 @@
+{
+  "name": "m1n64/imageresizer-sdk",
+  "version": "1.0.0",
+  "type": "library",
+  "description": "ImageResizer SDK for PHP",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.1",
+    "guzzlehttp/guzzle": "^7.9",
+    "ramsey/uuid": "^4.7",
+    "ext-fileinfo": "*"
+  },
+  "authors": [
+    {
+      "name": "Kirill Sakharov",
+      "email": "kirillsakharov.personal@gmail.com",
+      "homepage": "https://github.com/m1n64"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "M1n64\\ImageResizer\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.1",
+    "guzzlehttp/psr7": "^2.7"
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  }
+}
