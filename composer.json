@@ -1,6 +1,6 @@
 {
   "name": "m1n64/imageresizer-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "library",
   "description": "ImageResizer SDK for PHP",
   "minimum-stability": "stable",
