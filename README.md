@@ -14,6 +14,7 @@ It provides a simple, typed API for uploading and retrieving images via the REST
 - Supports optional API key authentication
 - Fully unit-tested
 
+> If you looking for **Laravel ImageResizer SDK** - you may to user this **https://github.com/junior-idiot/laravel-imageresizer-sdk**
 ---
 
 ## ⚙️ Installation
