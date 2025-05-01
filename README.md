@@ -14,7 +14,7 @@ It provides a simple, typed API for uploading and retrieving images via the REST
 - Supports optional API key authentication
 - Fully unit-tested
 
-> If you looking for **Laravel ImageResizer SDK** - you may to user this **https://github.com/junior-idiot/laravel-imageresizer-sdk**
+> If you're looking for **Laravel ImageResizer SDK** - you may to user this **https://github.com/junior-idiot/laravel-imageresizer-sdk**
 ---
 
 ## ⚙️ Installation
@@ -32,7 +32,8 @@ use M1n64\ImageResizer\Client;
 
 $client = new Client(
     xApiKey: null, // or 'your-api-key', if required
-    baseUrl: 'http://localhost:5689'
+    baseUrl: 'http://localhost:5689',
+    publicBaseUrl: 'http://localhost:5689', // optional, default is same as `baseUrl`. Used as image URL host
 );
 
 $image = $client->upload('/path/to/image.jpg');

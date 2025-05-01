@@ -16,7 +16,7 @@ use Ramsey\Uuid\UuidInterface;
 trait ImagesTrait
 {
     /** @var string */
-    const string URL_PATH = '/image';
+    private static string $urlPath= '/image';
 
     /**
      * Uploads an image file to the ImageResizer server.
@@ -31,7 +31,7 @@ trait ImagesTrait
             throw new \InvalidArgumentException("File not found: {$filePath}");
         }
 
-        $response = $this->http->request('POST', self::URL_PATH . '/upload', [
+        $response = $this->http->request('POST', self::$urlPath . '/upload', [
             'multipart' => [
                 [
                     'name' => 'file',
@@ -61,7 +61,7 @@ trait ImagesTrait
 
         $mime = mime_content_type($filePath);
 
-        $response = $this->http->request('POST', self::URL_PATH . '/upload/binary', [
+        $response = $this->http->request('POST', self::$urlPath . '/upload/binary', [
             'headers' => [
                 'Content-Type' => $mime,
             ],
@@ -99,7 +99,7 @@ trait ImagesTrait
             $headers['X-File-Name'] = $filename;
         }
 
-        $response = $this->http->request('POST', self::URL_PATH . '/upload/binary', [
+        $response = $this->http->request('POST', self::$urlPath . '/upload/binary', [
             'headers' => $headers,
             'body' => $data,
         ]);
@@ -119,7 +119,7 @@ trait ImagesTrait
     public function get(string|UuidInterface $id): Image
     {
         $id = is_string($id) ? $id : $id->toString();
-        $response = $this->http->request('GET', self::URL_PATH . "/{$id}");
+        $response = $this->http->request('GET', self::$urlPath . "/{$id}");
 
         $data = json_decode($response->getBody()->getContents());
 
@@ -132,7 +132,7 @@ trait ImagesTrait
      */
     private function sendResponse(object $data): Image
     {
-        ImageResponse::setBaseUrl($this->baseUrl);
+        ImageResponse::setBaseUrl($this->publicBaseUrl);
         return ImageResponse::fromObject($data);
     }
 }

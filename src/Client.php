@@ -36,6 +36,7 @@ class Client
     public function __construct(
         protected string|null $xApiKey = null,
         protected string $baseUrl = 'http://localhost:5689',
+        protected string $publicBaseUrl = 'http://localhost:5689',
     )
     {
         $headers = ['Accept' => 'application/json'];
